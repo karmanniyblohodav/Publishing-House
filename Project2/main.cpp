@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <vector>
 #include <memory>
 #include "..\Solver\Author.h"
@@ -10,40 +10,40 @@
 int main() {
     Publisher publisher;
 
-    auto author1 = std::make_shared<Author>("Иван Иванов");
-    auto author2 = std::make_shared<Author>("Мария Петрова");
+    auto author1 = std::make_shared<Author>("РРІР°РЅ РРІР°РЅРѕРІ");
+    auto author2 = std::make_shared<Author>("РњР°СЂРёСЏ РџРµС‚СЂРѕРІР°");
 
     publisher.addAuthor(author1);
     publisher.addAuthor(author2);
 
-    auto book = std::make_shared<Book>("Книга по C++", 2023);
+    auto book = std::make_shared<Book>("РљРЅРёРіР° РїРѕ C++", 2023);
     book->addCoAuthors(author1);
     author1->addPublication(book);
     publisher.addPublication(book);
 
-    auto journal = std::make_shared<Journal>("Научный журнал", 2022);
+    auto journal = std::make_shared<Journal>("РќР°СѓС‡РЅС‹Р№ Р¶СѓСЂРЅР°Р»", 2022);
     journal->addCoAuthors(author2);
     author2->addPublication(journal);
     publisher.addPublication(journal);
 
-    auto guide = std::make_shared<Guide>("Методическое руководство", 2021);
+    auto guide = std::make_shared<Guide>("РњРµС‚РѕРґРёС‡РµСЃРєРѕРµ СЂСѓРєРѕРІРѕРґСЃС‚РІРѕ", 2021);
     guide->addCoAuthors(author1);
     author1->addPublication(guide);
     publisher.addPublication(guide);
 
-    std::cout << "\nПубликации автора Иван Иванов:\n";
+    std::cout << "\nРџСѓР±Р»РёРєР°С†РёРё Р°РІС‚РѕСЂР° РРІР°РЅ РРІР°РЅРѕРІ:\n";
     author1->displayPublications();
 
-    std::cout << "\nПубликации автора Мария Петрова:\n";
+    std::cout << "\nРџСѓР±Р»РёРєР°С†РёРё Р°РІС‚РѕСЂР° РњР°СЂРёСЏ РџРµС‚СЂРѕРІР°:\n";
     author2->displayPublications();
 
-    // Демонстрация - вывод публикаций по году
-    std::cout << "\nКоличество публикаций за 2023 год:\n";
+    // Р”РµРјРѕРЅСЃС‚СЂР°С†РёСЏ - РІС‹РІРѕРґ РїСѓР±Р»РёРєР°С†РёР№ РїРѕ РіРѕРґСѓ
+    std::cout << "\nРљРѕР»РёС‡РµСЃС‚РІРѕ РїСѓР±Р»РёРєР°С†РёР№ Р·Р° 2023 РіРѕРґ:\n";
     publisher.displayPublicationCountByPeriod(2023);
 
-    // Итерация по коллекции публикаций
-    std::cout << "\nСписок всех публикаций в издательстве:\n";
-    for (const auto& publication : publisher.getPublicationsByAuthor("Иван Иванов")) {
+    // РС‚РµСЂР°С†РёСЏ РїРѕ РєРѕР»Р»РµРєС†РёРё РїСѓР±Р»РёРєР°С†РёР№
+    std::cout << "\nРЎРїРёСЃРѕРє РІСЃРµС… РїСѓР±Р»РёРєР°С†РёР№ РІ РёР·РґР°С‚РµР»СЊСЃС‚РІРµ:\n";
+    for (const auto& publication : publisher.getPublicationsByAuthor("РРІР°РЅ РРІР°РЅРѕРІ")) {
         publication->displayInfo();
     }
 
