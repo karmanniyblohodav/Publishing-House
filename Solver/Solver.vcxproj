@@ -131,20 +131,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Author.h" />
-    <ClInclude Include="Book.h" />
-    <ClInclude Include="Guide.h" />
-    <ClInclude Include="Journal.h" />
-    <ClInclude Include="Publication.h" />
-    <ClInclude Include="Publisher.h" />
+    <ClInclude Include="Exercise.h" />
+    <ClInclude Include="Exercise_virtual.h" />
+    <ClInclude Include="Generator.h" />
+    <ClInclude Include="IStreamGenerator.h" />
+    <ClInclude Include="Matrix.h" />
+    <ClInclude Include="RandomGenerator.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Author.cpp" />
-    <ClCompile Include="Book.cpp" />
-    <ClCompile Include="Guide.cpp" />
-    <ClCompile Include="Journal.cpp" />
-    <ClCompile Include="Publication.cpp" />
-    <ClCompile Include="Publisher.cpp" />
+    <ClCompile Include="Exercise.cpp" />
+    <ClCompile Include="Exercise_virtual.cpp" />
+    <ClCompile Include="Generator.cpp" />
+    <ClCompile Include="IStreamGenerator.cpp" />
+    <ClCompile Include="Matrix.cpp" />
+    <ClCompile Include="RandomGenerator.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
