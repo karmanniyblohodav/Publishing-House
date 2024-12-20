@@ -14,7 +14,7 @@ void Exercise::Task1() {
             }
         }
     }
-    out << *matrix << std::endl;
+    out << *matrix << '\n';
 }
 
 void Exercise::Task2() {
@@ -23,9 +23,9 @@ void Exercise::Task2() {
 
     std::vector<int> columns_to_delete;
 
-    for (int j = 0; j < cols; ++j) {
+    for (size_t j = 0; j < cols; ++j) {
         bool has_multiply_five = false;
-        for (int i = 0; i < rows; ++i) {
+        for (size_t i = 0; i < rows; ++i) {
             if ((*matrix)[i][j] % 5 == 0) {
                 has_multiply_five = true;
                 break;
@@ -36,7 +36,7 @@ void Exercise::Task2() {
         }
     }
     out << "Количество столбцов для удаления: " << columns_to_delete.size() << "\n";
-    for (int k = columns_to_delete.size() - 1; k >= 0; --k) {
+    for (size_t k = columns_to_delete.size() - 1; k >= 0; --k) {
         matrix->deleteColumn(columns_to_delete[k]);
     }
 

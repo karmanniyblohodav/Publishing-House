@@ -11,7 +11,7 @@ void Exercise_virtual::Run()
     out << "=== " << title() << " ===" << std::endl;
 
     out << "Исходная матрица:" << std::endl;
-    out << *matrix << std::endl;
+    out << *matrix << '\n';
 
     out << "Результат выполнения Task 1:" << std::endl;
     Task1();

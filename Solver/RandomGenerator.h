@@ -12,6 +12,6 @@ private:
 public:
 	RandomGenerator(const int min, const int max);
 
-	int generate() override;
+	int generate();
 };
 

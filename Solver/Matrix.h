@@ -16,12 +16,12 @@ private:
     /**
     * @brief Количество строк в матрице.
     */
-    int rows;
+    size_t rows;
 
     /**
     * @brief Количество столбцов в матрице.
     */
-    int cols;
+    size_t cols;
 
 public:
     /**

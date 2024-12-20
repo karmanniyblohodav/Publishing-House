@@ -6,14 +6,17 @@ Matrix::Matrix(int rows, int cols) : rows(rows), cols(cols), data(rows, std::vec
 
 Matrix::Matrix(int rows, int cols, Generator& generator) : rows(rows), cols(cols), data(rows, std::vector<int>(cols))
 {
+    if (rows < 0 || cols < 0) {
+        throw std::logic_error("The matrix is not correct");
+    }
     fill(generator);
 }
 
-void Matrix::fill(Generator& generator)
+void Matrix::fill(const Generator& generator)
 {
-    for (int i = 0; i < rows; ++i)
+    for (size_t i = 0; i < rows; ++i)
     {
-        for (int j = 0; j < cols; ++j)
+        for (size_t j = 0; j < cols; ++j)
         {
             data[i][j] = generator.generate();
         }
@@ -80,7 +83,7 @@ int Matrix::getCols() const
 void Matrix::deleteColumn(int col_index) {
     if (col_index < 0 || col_index >= getCols()) return;
 
-    for (int i = 0; i < getRows(); ++i) {
+    for (size_t i = 0; i < getRows(); ++i) {
         data[i].erase(data[i].begin() + col_index);
     }
     --cols;
@@ -101,9 +104,9 @@ std::string Matrix::toString() const
 }
 std::ostream& operator<<(std::ostream& os, const Matrix& matrix)
 {
-    for (int i = 0; i < matrix.rows; ++i)
+    for (size_t i = 0; i < matrix.rows; ++i)
     {
-        for (int j = 0; j < matrix.cols; ++j)
+        for (size_t j = 0; j < matrix.cols; ++j)
         {
             os << matrix.data[i][j] << " ";
         }
